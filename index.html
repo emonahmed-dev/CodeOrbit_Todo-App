@@ -17,7 +17,163 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-white">
+    <header class="max-w-6xl mx-auto relative">
+        <nav class="flex items-center justify-between p-4">
+            <div class="flex items-center gap-2">
+                <img src="./assets/TaskFlow Logo.png" alt="TaskFlow Logo" class="h-8 w-auto">
+                <h1 class="font-semibold plus-jakarta-sans text-lg">TaskFlow</h1>
+                <p class="rounded-full bg-secondary py-1 px-3 text-primary font-semibold text-[11px] hidden sm:block">
+                    PERSONAL</p>
+            </div>
+
+            <ul class="hidden md:flex gap-6 items-center">
+                <li class="text-dark font-medium text-sm"><a href="#" class="nav-links">Task</a></li>
+                <li class="text-dark font-medium text-sm"><a href="#" class="nav-links">Upcoming</a></li>
+                <li class="text-dark font-medium text-sm"><a href="#" class="nav-links">Projects</a></li>
+            </ul>
+
+            <div class="flex items-center gap-3">
+                <div
+                    class="hidden lg:flex bg-[#fff] py-2 px-3 rounded-lg gap-2 items-center border border-gray-100 shadow-sm">
+                    <i class="fa-solid fa-magnifying-glass fa-lg text-accent"></i>
+                    <p class="text-dark text-sm">Search</p>
+                    <img src="./assets/Keyboard.png" alt="keyboard image">
+                </div>
+
+                <button class="hidden md:block lg:hidden text-accent p-2">
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                </button>
+
+                <img src="./assets/Container.png" alt="profile image" class="w-9 h-9 rounded-full object-cover">
+
+                <button id="menu-btn" class="block md:hidden text-dark focus:outline-none p-2" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars fa-xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-4 pb-4 bg-white border-b border-gray-100">
+            <ul class="flex flex-col gap-3 pt-2">
+                <li class="text-dark font-medium text-sm"><a href="#" class="nav-links block py-1">Task</a></li>
+                <li class="text-dark font-medium text-sm"><a href="#" class="nav-links block py-1">Upcoming</a></li>
+                <li class="text-dark font-medium text-sm"><a href="#" class="nav-links block py-1">Projects</a></li>
+            </ul>
+
+            <div class="bg-[#fff] py-2 px-3 rounded-lg flex gap-2 items-center border border-gray-200">
+                <i class="fa-solid fa-magnifying-glass fa-lg text-accent"></i>
+                <p class="text-dark text-sm">Search</p>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-6xl mx-auto mt-7 px-2 lg:px-0">
+        <p class="w-max rounded-full bg-secondary py-2 px-4 text-primary font-semibold text-[11px]">
+            <span class="h-2 w-2 rounded-full bg-primary inline-block mr-0.5"></span> Daily Focus
+        </p>
+        <h1 class="font-bold text-4xl text-black my-2">Stay organized. Get things done.</h1>
+        <p class="text-dark">A calm, distraction-free workspace for capturing everyday tasks and
+            tracking personal momentum.</p>
+
+        <section class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div class="flex items-center bg-[#fff] py-6 px-4 justify-between rounded-xl">
+                <div class="info">
+                    <p class="text-dark mb-0.5">Total Tasks</p>
+                    <span class="text-black font-bold text-2xl">8</span>
+                </div>
+                <img src="./assets/tasks.png" alt="tasks icon">
+            </div>
+            <div class="flex items-center bg-[#fff] py-6 px-4 justify-between rounded-xl">
+                <div class="info">
+                    <p class="text-dark mb-0.5">Active Tasks</p>
+                    <span class="text-black font-bold text-2xl">5</span>
+                </div>
+                <img src="./assets/Background.png" alt="active tasks icon">
+            </div>
+            <div class=" bg-[#fff] py-6 px-4 rounded-xl">
+                <div class="flex justify-between items-center">
+                    <p class="text-dark mb-0.5">Completed</p>
+                    <p class="w-max rounded-full bg-green py-2 px-4 text-[002113] font-semibold text-[11px]">
+                        <span>38</span>% Done
+                    </p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-black font-bold text-2xl">3</span>
+                    <span class="text-dark text-xs">3 of total 8</span>
+
+                </div>
+
+                <div class="rounded-full bg-secondary h-2">
+                    <div id="progress" class="bg-[#006E4B] h-full rounded-full w-full" style="width: 38%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-8 bg-[#fff] p-6 rounded-xl">
+            <input class="w-full outline-none" type="text" placeholder="What needs to be done? Press Enter to save...">
+            <div class="flex items-center justify-between mt-3">
+                <div class="flex flex-col md:flex-row items-center gap-2">
+                    <div class="bg-secondary flex items-center gap-1 px-3 py-1 rounded-lg">
+                        <img src="./assets/work-icon.png" alt="work icon">Tag:
+                        <select name="" id="" class=" rounded-lg outline-none">
+                            <option value="personal">personal</option>
+                            <option value="work">work</option>
+                            <option value="health">health</option>
+                            <option value="career">career</option>
+                        </select>
+                    </div>
+                    <div class="bg-secondary flex items-center gap-1 px-3 py-1 rounded-lg">
+                        <span class="h-2 w-2 rounded-full bg-primary inline-block mr-0.5"></span>Priority:
+                        <select name="" id="" class=" rounded-lg outline-none">
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+
+                </div>
+                <button class="bg-primary text-white px-4 py-2 rounded-lg"><i class="fa-solid fa-plus"></i> Add
+                    Task</button>
+            </div>
+        </section>
+        <section>
+            <div class="flex items-center gap-2">
+                <p class="text-dark font-medium py-1 px-2  rounded-lg bg-[#fff]">All (13) </p>
+                <p class="text-dark font-medium py-1 px-2  rounded-lg">Active (8) </p>
+                <p class="text-dark font-medium py-1 px-2  rounded-lg">Complited (5) </p>
+            </div>
+            <div class="bg-[#fff] rounded-xl"></div>
+        </section>
+        <!-- <div class="p-6 rounded-xl bg-[#fff] mt-8">
+            <div class="flex items-center justify-between">
+                <h2 class="text-black plus-jakarta-sans font-semibold"><i class="fa-regular fa-eye"></i> Empty State
+                    Pattern Preview</h2>
+                <span class="text-primary bg-[#E2E7FF] rounded-full text-xs font-medium px-2 py-0.5">Design Guide
+                    Mode</span>
+            </div>
+            <div class="bg-[#E2E7FF] mt-3 gap-3 flex flex-col items-center justify-center p-8 rounded-xl">
+                <span class="bg-[#fff] rounded-full p-4"><i class="fa-solid fa-list-check fa-xl text-primary"></i></span>
+                <h3 class="plus-jakarta-sans font-semibold text-xl">No Tasks Yet</h3>
+                <p class="text-sm text-dark">Add your first task and start getting things done. Your mind is for
+                    having ideas, not holding them.</p>
+                <button class="bg-primary text-white px-4 py-2 rounded-lg"><i class="fa-solid fa-plus"></i> Create First
+                    Task</button>
+            </div>
+        </div> -->
+        <section class="mt-8 flex flex-col">
+            <div class="bg-[#fff] rounded-xl flex gap-4 p-3 items-center mb-2">
+                <input type="checkbox" name="" id="" class="rounded-sm cursor-pointer h-5 w-5 border border-[#C7C4D8]">
+                <div class="">
+                    <h3 class="mb-1.5 text-black font-medium text-sm">Title</h3>
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="text-primary bg-[#E2E7FF] py-0.5 px-2 rounded-full text-xs font-semibold">work</span>
+                        <span class="text-red text-xs font-semibold"><span
+                                class="h-2 w-2 rounded-full inline-block mr-0.5 bg-red"></span>High</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
     <script src="./scrpt.js"></script>
 </body>
 
