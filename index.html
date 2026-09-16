@@ -15,6 +15,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="bg-white">
@@ -108,12 +111,13 @@
         </section>
 
         <section class="my-8 bg-[#fff] p-6 rounded-xl">
-            <input class="w-full outline-none" type="text" placeholder="What needs to be done? Press Enter to save...">
+            <input id="task" class="w-full outline-none" type="text"
+                placeholder="What needs to be done? Press Enter to save...">
             <div class="flex items-center justify-between mt-3">
                 <div class="flex flex-col md:flex-row items-center gap-2">
                     <div class="bg-secondary flex items-center gap-1 px-3 py-1 rounded-lg">
                         <img src="./assets/work-icon.png" alt="work icon">Tag:
-                        <select name="" id="" class=" rounded-lg outline-none">
+                        <select name="" id="tag" class=" rounded-lg outline-none">
                             <option value="personal">personal</option>
                             <option value="work">work</option>
                             <option value="health">health</option>
@@ -122,7 +126,7 @@
                     </div>
                     <div class="bg-secondary flex items-center gap-1 px-3 py-1 rounded-lg">
                         <span class="h-2 w-2 rounded-full bg-primary inline-block mr-0.5"></span>Priority:
-                        <select name="" id="" class=" rounded-lg outline-none">
+                        <select name="" id="Priority" class=" rounded-lg outline-none">
                             <option value="Medium">Medium</option>
                             <option value="Low">Low</option>
                             <option value="High">High</option>
@@ -130,7 +134,8 @@
                     </div>
 
                 </div>
-                <button class="bg-primary text-white px-4 py-2 rounded-lg"><i class="fa-solid fa-plus"></i> Add
+                <button id="addTask" class="bg-primary text-white px-4 py-2 rounded-lg"><i class="fa-solid fa-plus"></i>
+                    Add
                     Task</button>
             </div>
         </section>
