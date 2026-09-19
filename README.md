@@ -2,14 +2,14 @@
 
 A modern and responsive personal task management web app built with HTML, Tailwind CSS, and vanilla JavaScript. TaskFlow allows users to create, complete, and delete tasks while keeping task data saved in the browser with LocalStorage.
 
-## ✨ Live Demo
+## 🚀 Live Demo
 
-`https://code-orbit-todo-app-3hxl.vercel.app/`
+https://code-orbit-todo-app-3hxl.vercel.app/
 
 ## 📸 Preview
 
 ```md
-![TaskFlow Preview](./assets/preview.png)
+![TaskFlow Preview](https://i.ibb.co.com/ds9qrHV6/preview.png)
 ```
 
 ## ✨ Features
