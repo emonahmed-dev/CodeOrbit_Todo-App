@@ -12,8 +12,11 @@ const Priority = document.getElementById("Priority");
 const taskContainer = document.getElementById("taskContainer");
 const addTask = document.getElementById("addTask");
 
-let tasks = [];
-let taskCount = 1;
+let tasks = localStorage.getItem("taskList")
+  ? JSON.parse(localStorage.getItem("taskList"))
+  : [];
+
+console.log(tasks);
 
 const addNewTask = () => {
   let taskText = taskInput.value.trim();
@@ -22,8 +25,10 @@ const addNewTask = () => {
   if (!taskText) {
     return Swal.fire("please add task!");
   }
+
+  // Create New Task
   const newTask = {
-    id: taskCount++,
+    id: Date.now(),
     taskText,
     newTag,
     newPriority,
@@ -31,13 +36,15 @@ const addNewTask = () => {
   };
 
   tasks.push(newTask);
+  const taskJSON = JSON.stringify(tasks);
+  localStorage.setItem("taskList", taskJSON);
   taskInput.value = "";
   render();
 };
 
 const render = () => {
   taskContainer.innerHTML = "";
-  if (taskContainer) {
+  if (tasks.length === 0) {
     let div = document.createElement("div");
     div.innerHTML = `<div class="p-6 rounded-xl bg-[#fff] mt-8">
             <div class="flex items-center justify-between">
@@ -55,6 +62,7 @@ const render = () => {
                     Task</button>
             </div>
         </div>`;
+    return taskContainer.appendChild(div);
   }
   tasks.forEach((task) => {
     const div = document.createElement("div");
@@ -77,13 +85,13 @@ const render = () => {
             </div>`;
     taskContainer.appendChild(div);
   });
-  console.log(tasks);
 };
 
 // Toggle Task Status
 const toggleTask = (id) => {
   let task = tasks.find((task) => task.id === id);
   task.complited = !task.complited;
+  localStorage.setItem("taskList", JSON.stringify(tasks));
   render();
 };
 
@@ -100,6 +108,7 @@ const deleteTsk = (id) => {
   }).then((result) => {
     if (result.isConfirmed) {
       tasks = tasks.filter((task) => task.id !== id);
+      localStorage.setItem("taskList", JSON.stringify(tasks));
       render();
       Swal.fire({
         title: "Deleted!",
@@ -118,37 +127,4 @@ taskInput.addEventListener("keydown", (e) => {
 });
 addTask.addEventListener("click", addNewTask);
 
-// const render = () => {
-//   if (!task) {
-//     return Swal.fire("please add task!");
-//   } else {
-//     const taskContainer = document.getElementById("taskContainer");
-//     const div = document.createElement("div");
-//     div.innerHTML = `<div class="bg-[#fff] rounded-xl flex gap-4 p-3 items-center mb-2 justify-between">
-//                 <div class="flex gap-4 p-3 items-center mb-2"><input type="checkbox" name="" id=""
-//                         class="rounded-sm cursor-pointer h-5 w-5 border border-[#C7C4D8]">
-//                     <div>
-//                         <h3 class="mb-1.5 text-black font-medium text-sm">${task}</h3>
-//                         <div class="flex items-center gap-2">
-//                             <span
-//                                 class="text-primary bg-[#E2E7FF] py-0.5 px-2 rounded-full text-xs font-semibold">${tag}</span>
-//                             <span class="text-red text-xs font-semibold"><span
-//                                     class="h-2 w-2 rounded-full inline-block mr-0.5 bg-red"></span>${Priority}</span>
-//                         </div>
-//                     </div>
-//                 </div>
-//                     <span class="cursor-pointer">
-//                         <i class="fa-solid fa-trash-can"></i>
-//                     </span>
-//             </div>`;
-
-//     taskContainer.appendChild(div);
-//     document.getElementById("task").value = ""
-//   }
-// }
-// document.getElementById("task").addEventListener("keydown", (e) => {
-//   if(e.key === "Enter"){
-//     render()
-//   }
-// })
-// document.getElementById("addTask").addEventListener("click", render);
+render();
