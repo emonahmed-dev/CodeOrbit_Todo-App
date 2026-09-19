@@ -76,39 +76,7 @@
         <p class="text-dark">A calm, distraction-free workspace for capturing everyday tasks and
             tracking personal momentum.</p>
 
-        <section class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            <div class="flex items-center bg-[#fff] py-6 px-4 justify-between rounded-xl">
-                <div class="info">
-                    <p class="text-dark mb-0.5">Total Tasks</p>
-                    <span class="text-black font-bold text-2xl">8</span>
-                </div>
-                <img src="./assets/tasks.png" alt="tasks icon">
-            </div>
-            <div class="flex items-center bg-[#fff] py-6 px-4 justify-between rounded-xl">
-                <div class="info">
-                    <p class="text-dark mb-0.5">Active Tasks</p>
-                    <span class="text-black font-bold text-2xl">5</span>
-                </div>
-                <img src="./assets/Background.png" alt="active tasks icon">
-            </div>
-            <div class=" bg-[#fff] py-6 px-4 rounded-xl">
-                <div class="flex justify-between items-center">
-                    <p class="text-dark mb-0.5">Completed</p>
-                    <p class="w-max rounded-full bg-green py-2 px-4 text-[002113] font-semibold text-[11px]">
-                        <span>38</span>% Done
-                    </p>
-                </div>
-                <div class="flex items-center justify-between">
-                    <span class="text-black font-bold text-2xl">3</span>
-                    <span class="text-dark text-xs">3 of total 8</span>
 
-                </div>
-
-                <div class="rounded-full bg-secondary h-2">
-                    <div id="progress" class="bg-[#006E4B] h-full rounded-full w-full" style="width: 38%;"></div>
-                </div>
-            </div>
-        </section>
 
         <section class="my-8 bg-[#fff] p-6 rounded-xl">
             <input id="task" class="w-full outline-none" type="text"
@@ -139,14 +107,7 @@
                     Task</button>
             </div>
         </section>
-        <section>
-            <div class="flex items-center gap-2">
-                <p class="text-dark font-medium py-1 px-2  rounded-lg bg-[#fff]">All (13) </p>
-                <p class="text-dark font-medium py-1 px-2  rounded-lg">Active (8) </p>
-                <p class="text-dark font-medium py-1 px-2  rounded-lg">Complited (5) </p>
-            </div>
-            <div class="bg-[#fff] rounded-xl"></div>
-        </section>
+
         <!-- <div class="p-6 rounded-xl bg-[#fff] mt-8">
             <div class="flex items-center justify-between">
                 <h2 class="text-black plus-jakarta-sans font-semibold"><i class="fa-regular fa-eye"></i> Empty State
@@ -163,19 +124,9 @@
                     Task</button>
             </div>
         </div> -->
-        <section class="mt-8 flex flex-col">
-            <div class="bg-[#fff] rounded-xl flex gap-4 p-3 items-center mb-2">
-                <input type="checkbox" name="" id="" class="rounded-sm cursor-pointer h-5 w-5 border border-[#C7C4D8]">
-                <div class="">
-                    <h3 class="mb-1.5 text-black font-medium text-sm">Title</h3>
-                    <div class="flex items-center gap-2">
-                        <span
-                            class="text-primary bg-[#E2E7FF] py-0.5 px-2 rounded-full text-xs font-semibold">work</span>
-                        <span class="text-red text-xs font-semibold"><span
-                                class="h-2 w-2 rounded-full inline-block mr-0.5 bg-red"></span>High</span>
-                    </div>
-                </div>
-            </div>
+        <section id="taskContainer" class="mt-8 flex flex-col">
+            <!-- task lists -->
+            
 
         </section>
     </main>
