@@ -8,9 +8,7 @@ https://code-orbit-todo-app-3hxl.vercel.app/
 
 ## 📸 Preview
 
-```md
 ![TaskFlow Preview](https://i.ibb.co.com/ds9qrHV6/preview.png)
-```
 
 ## ✨ Features
 
